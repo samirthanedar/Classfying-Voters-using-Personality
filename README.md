@@ -39,6 +39,6 @@ I've also included the following files to help you reproduce the results
 
 ## Web App
 
-Finally, please check out the [web app!](https://tranquil-falls-00014.herokuapp.com/predict) I created. I've put the top 12 features as questions. You can answer them and see if the model predicts your political party of choice corrrectly!
+Finally, please check out the [web app](https://tranquil-falls-00014.herokuapp.com/predict) I created. I've put the top 12 features as questions. You can answer them and see if the model predicts your political party of choice corrrectly!
 
 
