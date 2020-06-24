@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>My Webpage</title>
+</head>
+
+<body>
+  <form action="/predict">
+
+        <br>
+        {{ feature_names[0] }}
+        <br>
+        <input type="text" name="What year were you born?" value="">
+        <br>
+
+        {{ feature_names[1] }}
+        <br>
+        <input type="radio" name="Are you a male or female?" value="1"> Male
+        <input type="radio" name="Are you a male or female?" value="0"> Female
+        <br>
+
+        {{ feature_names[2] }}
+        <br>
+        <input type="radio" name="Does your life have a purpose" value="1"> Yes
+        <input type="radio" name="Does your life have a purpose" value="0"> No
+        <br>
+
+        {{ feature_names[3] }}
+        <br>
+        <input type="radio" name="Do you meditate or pray on a daily basis?" value="1"> Yes
+        <input type="radio" name="Do you meditate or pray on a daily basis?" value="0"> No
+        <br>      
+
+        {{ feature_names[4] }}
+        <br>
+        <input type="radio" name="Would you say most of the hardship in your life has been the result of circumstances beyond your own control, or has it been mostly the result of your own decisions and actions?" value="1"> Circumstances
+        <input type="radio" name="Would you say most of the hardship in your life has been the result of circumstances beyond your own control, or has it been mostly the result of your own decisions and actions?" value="0"> My own actions
+        <br>
+
+        {{ feature_names[5] }}
+        <br>
+        <input type="radio" name="Which parent 'wore the pants' in your household?" value="1"> Dad
+        <input type="radio" name="Which parent 'wore the pants' in your household?" value="0"> Mom
+        <br>
+
+        {{ feature_names[6] }}
+        <br>
+        <input type="radio" name="Would you rather be happy or right?" value="1"> Happy
+        <input type="radio" name="Would you rather be happy or right?" value="0"> Right
+        <br>
+
+        {{ feature_names[7] }}
+        <br>
+        <input type="radio" name="Do you personally own a gun?" value="1"> Yes
+        <input type="radio" name="Do you personally own a gun?" value="0"> No
+        <br>
+
+        {{ feature_names[8] }}
+        <br>
+        <input type="radio" name="Do you live within 20 miles of a major metropolitan area?" value="1"> Yes
+        <input type="radio" name="Do you live within 20 miles of a major metropolitan area?" value="0"> No
+        <br>
+
+        {{ feature_names[9] }}
+        <br>
+        <input type="radio" name="Are you a feminist?" value="1"> Yes
+        <input type="radio" name="Are you a feminist?" value="0"> No
+        <br>
+
+        {{ feature_names[10] }}
+        <br>
+        <input type="radio" name="Are you more of an idealist or a pragmatist?" value="1"> Idealist
+        <input type="radio" name="Are you more of an idealist or a pragmatist?" value="0"> Pragmatist
+        <br>
+
+        {{ feature_names[11] }}
+        <br>
+        <input type="radio" name="Did your parents spank you as a form of discipline/punishment?" value="1"> Yes
+        <input type="radio" name="Did your parents spank you as a form of discipline/punishment?" value="0"> No
+        <br>
+
+
+    <br>
+    <input type="submit" value="Submit" method="get">
+
+
+  </form>
+
+  <p>
+    prediction:
+    {% for p in prediction %}
+      <br>  {{p['name']}}:{{ 100*p['prob'] | round(2) }}% 
+    {% endfor %}
+  </p>
+
+</body>
+
+</html>
